@@ -18,12 +18,15 @@
  * SMS notifier is a one way SMS messaging block that allows managers, teachers and administrators to
  * send text messages to their student and teacher.
  * @package blocks
- * @author: Azmat Ullah, Talha Noor
- * @date: 07-JUN-2017
+ * @author: Waqas Ansari
+ * @date: 21-May-2019
 */
-
-$plugin->version   = 2017060700;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2010112400;        // Requires this Moodle version
+/**
+ * @copyright 2019 3iLogic <info@3ilogic.com>
+ */
+defined('MOODLE_INTERNAL') || die;
+$plugin->version = 2020101703;
+$plugin->requires = 2016052300;  // Moodle 3.1.0.
 $plugin->component = 'block_sms';
-$plugin->release = '3.3';
+$plugin->release    = '3.9.0';
 $plugin->maturity = MATURITY_STABLE;
