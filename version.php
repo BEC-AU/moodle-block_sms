@@ -25,8 +25,8 @@
  * @copyright 2019 3iLogic <info@3ilogic.com>
  */
 defined('MOODLE_INTERNAL') || die;
-$plugin->version = 2020101804;
-$plugin->requires = 2016052300;  // Moodle 3.1.0.
+$plugin->version = 2020101805;
+$plugin->requires = 2019052000;
 $plugin->component = 'block_sms';
-$plugin->release    = '3.9.0';
+$plugin->release = '3.7';
 $plugin->maturity = MATURITY_STABLE;
