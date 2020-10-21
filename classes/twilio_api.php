@@ -52,6 +52,7 @@ class TwilioAPI {
         $status = false;
         try {
             $result = json_decode($result, true);
+			print_object($result);
             $status = $result["messages"][0]["status"] == 0;
         } catch (Exception $e) {
             ";";
@@ -60,11 +61,8 @@ class TwilioAPI {
     }
 
     private function trigger_api($to, $text) {
-        $data = array(
-            'From' => $this->fromnumber,
-            'To' => $to,
-            'Body' => $text
-        );
+		$fromnumber = $this->fromnumber;
+		$data = "&From=$fromnumber&To=$to&Body=$text";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->uri);
         curl_setopt($ch, CURLOPT_POST, true);
