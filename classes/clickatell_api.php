@@ -50,7 +50,7 @@ class ClickatellAPI {
     }
 
     private function trigger_api($to, $text) {
-        $data = "&to={$to}&content=" . urlencode($text);
+        $data = "&to={$to}&content=$text";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->uri . $data);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);

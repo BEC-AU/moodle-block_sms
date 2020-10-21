@@ -63,7 +63,7 @@ class TwilioAPI {
         $data = array(
             'From' => $this->fromnumber,
             'To' => $to,
-            'Body' => urlencode($text)
+            'Body' => $text
         );
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $this->uri);
