@@ -52,7 +52,6 @@ class TwilioAPI {
         $status = false;
         try {
             $result = json_decode($result, true);
-			print_object($result);
             $status = $result["messages"][0]["status"] == 0;
         } catch (Exception $e) {
             ";";
