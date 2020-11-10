@@ -61,9 +61,23 @@ if ($ADMIN->fulltree) {
         get_string('sms_api_from', 'block_sms'),
         get_string('sms_api_from', 'block_sms'),
         '', PARAM_TEXT));
+    
+     /* ============================== tiniyo  ====================*/
+    $settings->add(new admin_setting_configtext("block_sms_tiniyo_auth_id",
+        get_string('sms_api_authid', 'block_sms'),
+        get_string('sms_api_authid', 'block_sms'),
+        '', PARAM_TEXT));
+    $settings->add(new admin_setting_configtext("block_sms_tiniyo_auth_token",
+        get_string('sms_api_secret', 'block_sms'),
+        get_string('sms_api_secret', 'block_sms'),
+        '', PARAM_TEXT));
+    $settings->add(new admin_setting_configtext("block_sms_tiniyo_api_from",
+        get_string('sms_api_from', 'block_sms'),
+        get_string('sms_api_from', 'block_sms'),
+        '', PARAM_TEXT));
 
     $settings->add(new admin_setting_configselect('block_sms_api', 'SMS API Name', 'Select Api which you are using', 'Clickatell',
-        array("clickatell" => "Clickatell", "nexmo" => 'Nexmo SMS', "twilio" => 'Twilio SMS')));
+        array("clickatell" => "Clickatell", "nexmo" => 'Nexmo SMS', "twilio" => 'Twilio SMS', "tiniyo" => 'Tiniyo SMS')));
 
     echo '
     <script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -71,7 +85,8 @@ if ($ADMIN->fulltree) {
         $(() => {
             let vendors = {"clickatell": ["apikey"],
                             "nexmo": ["apikey", "api_secret", "api_from"],
-                            "twilio": ["accountsid", "auth_token", "api_from"]
+                            "twilio": ["accountsid", "auth_token", "api_from"],
+                            "tiniyo": ["authid", "api_secret", "api_from"]
                             /*"sendpk": ["username", "password", "from_no"]*/};
             const selectedVendor = $("#id_s__block_sms_api option:selected").val();
             Object.keys(vendors).forEach((vendorName) => {
