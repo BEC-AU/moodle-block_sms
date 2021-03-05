@@ -14,3 +14,12 @@ _______________________________
 4) Copy API ID and paste it on Moodle setting page with username and password
 ____________________________________________
 
+______________________________
+Tiniyo
+For Tiniyo API, See http://www.tiniyo.com
+_______________________________
+1) Create a developer account on tiniyo.com
+2) Login with developer account
+3) Copy auth_id, auth_token and paste it on Moodle setting page with username and password
+____________________________________________
+

@@ -28,10 +28,11 @@ defined('MOODLE_INTERNAL') || die;
 require_once("nexmo_api.php");
 require_once("twilio_api.php");
 require_once("clickatell_api.php");
+require_once("tiniyo_api.php");
 
 class SMSNotifier {
     private $type;
-    private $apilist = array("nexmo", "twilio", "clickatell");
+    private $apilist = array("nexmo", "twilio", "clickatell", "tiniyo");
     private $instance;
 
     public function __construct($type = "") {
@@ -48,6 +49,9 @@ class SMSNotifier {
                 break;
             case "clickatell":
                 $this->instance = new ClickatellAPI();
+                break;
+            case "tiniyo":
+                $this->instance = new TiniyoAPI();
                 break;
         }
     }
@@ -66,6 +70,9 @@ class SMSNotifier {
                 break;
             case "clickatell":
                 $this->instance = new ClickatellAPI();
+                break;
+            case "tiniyo":
+                $this->instance = new TiniyoAPI();
                 break;
         }
     }
